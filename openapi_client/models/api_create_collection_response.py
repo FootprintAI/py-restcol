@@ -31,7 +31,7 @@ class ApiCreateCollectionResponse(BaseModel):
     """ # noqa: E501
     metadata: Optional[ApiCollectionMetadata] = Field(default=None, alias="Metadata")
     description: Optional[StrictStr] = None
-    collection_type: Optional[ApiCollectionType] = Field(default=ApiCollectionType.NONE, alias="collectionType")
+    collection_type: Optional[ApiCollectionType] = Field(default=ApiCollectionType.COLLECTION_TYPE_NONE, alias="collectionType")
     schemas: Optional[List[ApiSchemaField]] = None
     __properties: ClassVar[List[str]] = ["Metadata", "description", "collectionType", "schemas"]
 
@@ -98,7 +98,7 @@ class ApiCreateCollectionResponse(BaseModel):
         _obj = cls.model_validate({
             "Metadata": ApiCollectionMetadata.from_dict(obj["Metadata"]) if obj.get("Metadata") is not None else None,
             "description": obj.get("description"),
-            "collectionType": obj.get("collectionType") if obj.get("collectionType") is not None else ApiCollectionType.NONE,
+            "collectionType": obj.get("collectionType") if obj.get("collectionType") is not None else ApiCollectionType.COLLECTION_TYPE_NONE,
             "schemas": [ApiSchemaField.from_dict(_item) for _item in obj["schemas"]] if obj.get("schemas") is not None else None
         })
         return _obj
