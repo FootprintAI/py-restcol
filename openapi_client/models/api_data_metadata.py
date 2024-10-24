@@ -34,7 +34,7 @@ class ApiDataMetadata(BaseModel):
     document_id: Optional[StrictStr] = Field(default=None, alias="documentId")
     created_at: Optional[datetime] = Field(default=None, alias="CreatedAt")
     deleted_at: Optional[datetime] = Field(default=None, alias="DeletedAt")
-    dataformat: Optional[ApiDataFormat] = ApiDataFormat.UNKNOWN
+    dataformat: Optional[ApiDataFormat] = ApiDataFormat.DATA_FORMAT_UNKNOWN
     __properties: ClassVar[List[str]] = ["projectId", "collectionId", "schemaId", "documentId", "CreatedAt", "DeletedAt", "dataformat"]
 
     model_config = ConfigDict(
@@ -94,7 +94,7 @@ class ApiDataMetadata(BaseModel):
             "documentId": obj.get("documentId"),
             "CreatedAt": obj.get("CreatedAt"),
             "DeletedAt": obj.get("DeletedAt"),
-            "dataformat": obj.get("dataformat") if obj.get("dataformat") is not None else ApiDataFormat.UNKNOWN
+            "dataformat": obj.get("dataformat") if obj.get("dataformat") is not None else ApiDataFormat.DATA_FORMAT_UNKNOWN
         })
         return _obj
 
