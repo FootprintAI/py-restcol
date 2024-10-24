@@ -28,7 +28,7 @@ class ApiSchemaField(BaseModel):
     ApiSchemaField
     """ # noqa: E501
     name: Optional[StrictStr] = None
-    datatype: Optional[ApiSchemaFieldDataType] = ApiSchemaFieldDataType.SCHEMA_FIELD_DATA_TYPE_NONE
+    datatype: Optional[ApiSchemaFieldDataType] = ApiSchemaFieldDataType.NONE
     example: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["name", "datatype", "example"]
 

@@ -26,6 +26,7 @@ class ApiDataFormat(str, Enum):
     """
     allowed enum values
     """
+    UNKNOWN = 'DATA_FORMAT_UNKNOWN'
     DATA_FORMAT_UNKNOWN = 'DATA_FORMAT_UNKNOWN'
     DATA_FORMAT_AUTO = 'DATA_FORMAT_AUTO'
     DATA_FORMAT_JSON = 'DATA_FORMAT_JSON'
